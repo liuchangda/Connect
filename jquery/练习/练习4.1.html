@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #container{
+            border: solid 1px #000;
+            margin: 0 auto;
+            width: 450px;
+        }
+        #top-nav{
+            background-color: #000;
+            border-bottom: solid 1px #000;
+            width: 100%;
+        }
+        #top-nav li{
+            height: 40px;
+            float: left;
+            list-style: none;
+            line-height: 40px;
+            padding:0 20px;
+            color: #fff;
+            background: #000;
+        }
+        #top-nav ul{
+            padding:0;
+        }
+        #content ul{
+            display: none;
+        }
+        #content .active{
+            display: block;
+        }
+        #top-nav .active{
+            background: #cccccc;
+            color: #000;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="top-nav">
+            <ul class="nav-ul clearfix">
+                <li class="active">第一课</li>
+                <li>第二课</li>
+                <li>第三课</li>
+            </ul>
+        </div>
+        <div id="content">
+            <ul class="active">
+                <li>网页特效原理分析</li>
+                <li>网页特效原理分析</li>
+                <li>网页特效原理分析</li>
+                <li>网页特效原理分析</li>
+                <li>第一页</li>
+            </ul>
+            <ul>
+                <li>改变网页背景颜色</li>
+                <li>第二页</li>
+            </ul>
+            <ul>
+                <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+                <li>第三页</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+    $(".nav-ul li").click(function(){
+        $(this).add($(".content ul:eq("+$(this).index()+")")).addClass("active").siblings().removeClass("active");
+    })
+    </script>
+</body>
+</html>
