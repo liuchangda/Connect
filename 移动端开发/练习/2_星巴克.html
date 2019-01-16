@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            position: relative;
+        }
+        .nav{
+            width: 40%;
+            height: 200px;
+        }
+        .content-img{
+            position: absolute;
+            width: 60%;
+            top: 0;
+            left: 40%;
+        }
+        .content-img img{
+            width: 100%;
+        }
+        .nav li,.header li{
+            float: left;
+            font-size:20px;
+            margin-right: 20px;
+        }
+        #header{
+            position: absolute;
+            top: 50px;
+            height: 500px;
+        }
+        @media(max-width:1024px){
+            #container.nav{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="nav">
+            <ul>
+                <li class="store">门店</li>
+                <li class="account">我的账户</li>
+                <li class="menu">菜单</li>
+            </ul>
+            <div class="header">
+                    <span>心情惬意，来杯咖啡吧</span>
+                    <ul>
+                        <li><a href="">登录</a></li>
+                        <li><a href="">注册</a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="content-img">
+            <img src="../../img/kv-0.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

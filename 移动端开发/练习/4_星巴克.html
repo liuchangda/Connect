@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1014014_714nbkffmby.css">
+    <title>Document</title>
+    <script src="../../jquery/js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 30%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 0;
+        }
+        .nav{
+            width: 100%;
+            margin: 20px;
+            display: inline-block;
+        }
+        .nav li{
+            float: left;
+            margin-right: 20px;
+            font-size: 20px;
+            font-weight: bolder;
+
+        }
+        .content li{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bolder;
+            margin-right: 20px;
+            color: #00A862;           
+        }
+        .signUp{
+            border-radius:10px;
+            border: 1px solid #00A862;
+        }
+        .nav .iconfont icon-daohang{
+            float: right;
+        }
+        .content{
+            text-align: center;
+            width:100%;
+            height: 100px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin-left: -50%;
+            margin-top: -50px;
+        }
+        .content p{
+            /* position: absolute;
+            top: 50%;
+            transform: translateY(-50%); */
+            height: 50px;
+            font-size: 20px;
+        }
+        @media(max-width:1024px){
+            #container{
+                width: 100%; 
+                height: 40%;
+                /* left: 0;
+                right: 0;
+                top: 0;
+                bottom: 50%; */
+                              
+            }
+            #slider img{
+                width: 100%;
+            }
+            .content{
+                position: absolute;
+                top:150px;
+                left: 150px;
+            }
+        }
+        @media(max-width:640px){
+            .nav,.content li{
+                display: none;
+            }
+            #container{
+                height: 10%;
+            }
+            .content{
+                position: absolute;
+                top:70px;
+                left: 150px;
+            }
+        }
+
+        #slider img{
+            width: 70%;
+            position: absolute;
+            left: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="nav">
+            <ul>
+                <li><img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt=""></li>
+                <li>门店</li>
+                <li>我的账户</li>
+                <li>菜单</li>
+                <li><i class="iconfont icon-daohang"></i></li>
+            </ul>
+        </div>
+        <div class="content">
+            <p>心情惬意，来杯咖啡吧☕</p>
+            <ul>
+                <li>登录</li>
+                <li class="signUp">注册</li>
+            </ul>
+            
+        </div>
+    </div>
+    
+    <!-- <div id="slider">
+        <div>
+            <div class="slider-panner">
+                <img src="../../img/kv-0.jpg" alt="">
+            </div>
+            <div class="slider-panner">
+                <img src="../../img/kv1.jpg" alt="">
+            </div>
+            <div class="slider-panner">
+                <img src="../../img/kv2.jpg" alt="">
+            </div>
+            <div class="slider-panner">
+                <img src="../../img/kv3.jpg" alt="">
+            </div>            
+        </div>
+        <div>
+            <div class="left">&gt;</div>
+            <div class="right">&lt;</div>
+        </div>
+    </div> -->
+
+    <script>
+        
+    </script>
+</body>
+</html>
