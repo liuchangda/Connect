@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #can{
+      width: 300px;
+      height: 150px;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="can" width="600" height="300"></canvas>
+  <script>
+    var oCan = document.getElementById("can");
+    var context = oCan.getContext("2d");
+
+    oCan.onmousedown = function(e){
+      context.beginPath();
+      context.strokeStyle = 'white';
+      context.lineWidth = '3';
+      context.moveTo(e.clientX*2,e.clientY*2);
+
+      oCan.onmousemove = function(e){
+        context.lineTo(e.clientX*2,e.clientY*2);
+        context.stroke();
+      }    
+    }
+    document.onmouseup = function(){
+      oCan.onmousemove = null;
+    }
+
+
+    // oCan.addEventListener('mousedown',function(e){
+    //     var iDisX = 0;
+    //     var iDisY = 0;
+    //     e = e || window.event;
+    //     iDisX = e.clientX;
+    //     iDisY = e.clientY;
+    //     console.log(iDisX,iDisY);
+    //     oCan.addEventListener('mousemove',function(e){
+    //     context.beginPath();
+    //     context.moveTo(iDisX,iDisY); //下笔处 起点
+    //     context.stroke();
+    //     context.beginPath();
+    //     context.lineTo(e.clientX,e.clientY); //终点
+    //     context.lineWidth = '10';
+    //     })
+    // })
+  </script>
+</body>
+</html>

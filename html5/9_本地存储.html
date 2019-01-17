@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // document.cookie = 'test = 123;'
+        // document.cookie = 'test1 = 456;'
+        // var timer = new Date(); //获取当前时间
+        // // console.log(timer);
+        // timer.setDate(timer.getDate()-1);
+        // document.cookie = 'test3 = 789;expires='+timer.toUTCString();
+        // console.log(document.cookie);
+        
+        setCookie('test4','123','1');
+        console.log(getCookie('test4'));
+         
+        // delCookie('test4')
+        function setCookie(key,value,expires){
+            var timer = new Date();
+            timer.setDate(timer.getDate()+parseInt(expires)); //设置过期时间
+            document.cookie = key+'='+value+';expires='+timer.toUTCString();
+        }
+        function delCookie(key){
+            var timer = new Date();
+            timer.setDate(timer.getDate()-1);
+            document.cookie = key+'=null;expires='+timer.toUTCString();
+        }
+        function getCookie(key){
+            var newCookies = document.cookie;
+            var arr = [];
+            arr = newCookies.split(';');
+            for(var i=0; i<arr.length; i++){
+                if(arr[i].split('=')[0].trim() == key){ //去除字符串前后的空格
+                    return (key+'='+arr[i].split('=')[1]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
