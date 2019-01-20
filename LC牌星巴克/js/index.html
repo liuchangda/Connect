@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../../Connect/jquery/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <!-- 这才是重点 -->
+            <div class="content"> 
+                <!-- 左上面的菜单header -->
+                <div class="header clearfix">
+                    <a class="logo" href="javascript:void(0);">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                    </a>
+                    <div class="primary ">
+                        <ul>
+                            <li>门店</li>
+                            <li>我的账户</li>
+                            <li>菜单</li>
+                        </ul>
+                    </div>
+                    <a class="icon" href="javascript:void(0);">
+                        <img src="https://www.starbucks.com.cn/assets/icons/icon-hamburger.svg" alt="">
+                    </a>
+                </div>
+                <!-- 左侧下方部分 -->
+                <div class="body">
+                    <div class="container">
+                        <!-- 文字 -->
+                        <div class="bc-text">
+                            <span>心情惬意，来杯咖啡吧&nbsp;☕</span>
+                        </div>
+                        <!-- 登录 注册 -->
+                        <div class="btn-bar">
+                            <a class="sign-in" href="javascript:void(0);">
+                                <img src="https://www.starbucks.com.cn/assets/icons/icon-account.svg" alt="">
+                                <span>登录</span>
+                            </a>
+                            <a class="sign-up" href="javascript:void(0);">
+                                <span>注册</span>
+                            </a>
+                        </div>                        
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- 覆盖层 -->
+            <div class="overlay">
+                <div class="no-header clearfix">
+                    <!-- 第二个星巴克logo -->
+                    <a class="logo" href="javascript:void(0);">
+                        <img src="https://www.starbucks.com.cn/assets/images/logo.svg" alt="">
+                    </a>
+                    <button class="close"></button>    
+                </div>
+                <div class="no-content">
+                    <ul class="noc-body">
+                        <li>门店</li>
+                        <li>星享俱乐部</li>
+                        <li>菜单</li>
+                        <li>
+                            <hr>
+                        </li>
+                        <li>星巴克移动应用</li>
+                        <li>星礼卡</li>
+                        <li>星巴克臻选™</li>
+                        <li>专星送™</li>
+                        <li>咖啡星讲堂</li>
+                        <li>上海烘焙工坊</li>
+                        <li>关于星巴克</li>
+                        <li>帮助中心</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="hero">
+                <div class="hero-btn"></div>
+                <ul class="hero-content clearfix">
+                    <li>
+                        <img src="../../Connect/img/kv-0.jpg" alt="" class="pc">
+                        <img src="../../Connect/img/kv-0-mobile.jpg" alt="" class="mobile">
+                    </li>
+                    <li>
+                        <img src="../../Connect/img/kv1.jpg" alt="" class="pc">
+                        <img src="../../Connect/img/kv1-mobile.jpg" alt="" class="mobile">
+                    </li>
+                    <li>
+                        <img src="../../Connect/img/kv2.jpg" alt="" class="pc">
+                        <img src="../../Connect/img/kv2-mobile.jpg" alt="" class="mobile">
+                    </li>
+                    <li>
+                        <img src="../../Connect/img/kv3.jpg" alt="" class="pc">
+                        <img src="../../Connect/img/kv5-mobile.jpg" alt="" class="mobile">
+                    </li> 
+                    <li>
+                        <img src="../../Connect/img/kv-0.jpg" alt="" class="pc">
+                        <img src="../../Connect/img/kv-0-mobile.jpg" alt="" class="mobile">
+                    </li>
+                </ul>              
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(".close").click(function(){
+        $(".overlay").removeClass("active");
+    })
+    $(".icon").click(function(){
+        $(".overlay").addClass("active");
+    })
+
+    var nowWidth = 0;
+    var nowIndex = 0;
+    $(".hero-btn").click(function(){
+        var trans = ++nowIndex*nowWidth;
+        $(".hero-content").css({
+            transform:'translateX('+(-trans)+'px)',
+            transition:'all .3s ease'
+        })
+        if(nowIndex == 4){
+            setTimeout(function(){
+                $(".hero-content").css({
+                    transform:'translateX(0px)',
+                    transition:'none'
+                })
+            },300)
+            nowIndex = 0;
+        }
+    })
+
+    function run(){
+        var trans = nowIndex*nowWidth;
+        $(".hero-content").css({
+            transform:'translateX('+(-trans)+'px)',
+            transition:'none'
+        })
+    }
+
+    returnWinWidth();
+    function returnWinWidth(){
+        nowWidth = $(document).width();
+        if(nowWidth > 1024){
+            nowWidth*=0.7;
+        }
+        $(".hero-content").width(nowWidth*5);
+    }
+    $(window).resize(function(){
+        returnWinWidth();
+        run();
+    })
+</script>
+</html>

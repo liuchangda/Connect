@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../Connect/jquery/js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 500px;
+            white-space: nowrap;
+            overflow-x: auto;
+            margin-bottom: -20px;
+        }
+        .content li{
+            width: 150px;
+            height: 100px;
+            background: #f00;
+            display: inline-block;
+        }
+        .box{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </div>
+        </div>
+        
+        <button class="left-btn">向左</button>
+        <button class="right-btn">向右</button>
+    </div> 
+    <script>
+        
+
+        $(".left-btn").click(function(){
+            run('left');
+          
+        })
+        $(".right-btn").click(function(){
+            run('right')
+            // var nowLeft = $(".content").scrollLeft(); 
+            // var clientWidth = $(".content").width(); //可视宽度
+            // var allWidth = $(".content").get(0).scrollWidth;
+            // console.log(nowLeft,clientWidth,allWidth);         
+            // var scrollWidth = nowLeft+300;
+            // console.log(nowLeft,scrollWidth);
+            // $(".content").animate({           
+            //     scrollLeft:scrollWidth
+            // },100,function(){
+            //     btnShow();
+            // })
+           
+        })
+        $(".content").scroll(function(){
+            btnShow();
+        })
+        function run(btn){
+            var nowLeft = $(".content").scrollLeft();
+            var scrollWidth = btn=='left' ? nowLeft-300 : nowLeft+300;
+            $(".content").animate({
+               scrollLeft:scrollWidth 
+            },300,function(){
+                btnShow();
+            })
+        }
+        function btnShow(){
+            var nowLeft = $(".content").scrollLeft(); 
+            var clientWidth = $(".content").width(); //可视宽度
+            var allWidth = $(".content").get(0).scrollWidth;
+            $(".left-btn").show();
+            $(".right-btn").show();
+            if(nowLeft == 0){
+                $(".left-btn").hide();
+            }else if(nowLeft + clientWidth == allWidth){
+                $(".right-btn").hide();
+            }
+        }
+    </script>
+</body>
+</html>

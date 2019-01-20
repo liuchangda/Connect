@@ -1,0 +1,225 @@
+/* global start*/
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    background: #f7f7f7;
+}
+html{
+    font-size: 62.5% !important;
+}
+a{
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* global end*/
+
+
+/* nav start */
+@media(min-width:1025px){
+    .container .nav{
+        width: 30%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+       
+    }
+    .overlay{
+        width: 30%;
+    }
+}
+
+@media (min-width:641px) and (max-width:1024px){
+    .container .nav{
+        width: 100%;
+    }  
+    .nav .btn-bar{
+        margin-bottom: 20px;
+    }
+    .nav .container{
+        padding: 0 16px !important;
+    }
+    .overlay{
+        right: 0;
+    }
+}
+@media (max-width:640px){
+    .container .nav .header{
+        display: none;
+    }
+    .container .nav .btn-bar{
+        display: none;
+    }
+    .nav .body .container{
+        padding:16px 16px 0 16px !important;
+    }
+    .nav .container span{
+        font-size: 2.2rem;
+    }
+}
+
+
+
+.container .nav{
+    background: #fff;
+    box-shadow: 0 0 4px rgb(0,0,0,0.12);/*4px 模糊程度*/
+}
+.nav .overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all .1s ease;
+}
+.nav .content{
+    height: 100%;
+}
+.nav .header{
+    padding: 24px;
+}
+/* 星巴克设置浮动 右边距 */
+.nav .header .logo{
+    float: left;
+    margin-right: 12px;
+}
+/* 星巴克图标尺寸 */
+.nav .logo img{
+    width: 36px;
+}
+/* 文本左浮 */
+.nav .primary li{
+    float: left;
+    font-size:1.6rem; /*默认字体的1.6倍 */
+    font-weight: 700;
+    padding: 7px 10px 5px;
+}
+.nav .header .icon{
+    float: right;
+    padding: 6px 0;
+}
+.nav .body{
+    height: calc(100% - 98px);
+    display: table; /*为什么？？？？？*/
+}
+.nav .body .container{
+    padding: 0 24px 0 84px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.nav .body .bc-text{
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.nav .btn-bar span{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #00A862;
+}
+.nav .sign-in img{
+    vertical-align: middle;
+    margin-top: -5px; /*？？？？？*/
+}
+.nav .sign-up{
+    border: solid 1px #00A862;
+    border-radius: 48px;
+    padding: 9px 15px 5px 15px;
+    margin-left: 20px;
+}
+.overlay .no-header{
+    padding: 24px;/*？？？*/
+}
+.overlay .no-header .logo{
+    float: left;
+}
+.overlay .no-header .close{
+    float: right;
+    background: url('https://www.starbucks.com.cn/assets/icons/icon-close.svg') no-repeat center;
+    border: transparent;
+    width: 48px;
+    height: 48px;
+    outline:none; /*去除鼠标点击时出现的外边框*/
+}
+.overlay .no-content{  
+   margin: 0 24px 0 84px;
+   
+}
+.overlay .noc-body li{
+    font-size: 1.8rem;
+    padding: 8px 0; 
+    font-weight: 700;
+}
+.overlay.active{
+    visibility: visible;
+    font-size: 1.8px;
+    font-weight: 700;
+    opacity: 1;/*why？？*/
+    transform: scale(1);
+}
+.overlay.active .no-content{
+    transform: scale(1);
+}
+
+/* nav start */
+
+/* content start*/
+@media (min-width:1025px){
+    .container .content-body{
+        width: 70%;
+        margin-left: 30%;
+    }
+    .mobile{
+        display: none;
+    }
+}
+@media (min-width:641px) and (max-width:1024px){
+    .container .content-body{
+        width: 100%;
+    }
+    .mobile{
+        display: none;
+    }
+}
+@media (max-width:640px){
+    .pc{
+        display: none;
+    }
+}
+.container .hero{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.content-body img{
+    width: 100%;
+}
+.container .hero-content li{
+    float: left;
+    width: 20%;
+}
+.container .hero .hero-btn{
+    background: url('https://www.starbucks.com.cn/assets/icons/icon-arrow-white.svg') no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    height: 48px;
+    width: 48px;
+    z-index: 10;
+
+}
+
+/* content start*/

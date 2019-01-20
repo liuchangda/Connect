@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import 'main';
+$color:'red\6';
+.box{
+    background:$color;
+    .box2{
+        width: 10px;
+    }
+}
+.div1{
+    background: $color;
+    &-box1{
+        color: $color;
+        &-box2{
+            font-size: 10px;
+            color: $color;
+        }
+    }
+}
+.clearfix{
+    background: #000;
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+$width1:'width';
+.div10{
+    border: {
+        right: {
+            color: $color;
+            style:solid;
+            #{$width1}:1px;
+        };
+        left: 3px;
+    }
+}
+@mixin name($w:30px,$h:20px) { //20 30 为默认值
+    width: $w;
+    height: $h;
+    color: #000;
+}
+.div11{
+    @include
+}
