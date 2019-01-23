@@ -7,17 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 手机号码正则表达式
-正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。
-
-例：013889294444 ( true )
-
-例：13889294444 ( true ) -->
+    <div>
+        <h3>用户名正则表达式</h3>
+        <p>正则验证用户名，包含数字、字母、下划线11位。</p>
+    </div>
     <script>
-        let str1 = '013889294444'; 
-        let str2 = '13889294444';
+        let str1 = 'fellow29abc'; 
+        let str2 = 'fellow29abcd';
 
-        let reg = /0*1(3|5)\d{9}$/;
+        let reg = /\w.{11}/;
         console.log(reg.test(str2));
     </script>
 </body>
