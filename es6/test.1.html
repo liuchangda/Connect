@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,2];
+        // var nSet = new Set(arr);
+        // console.log(nSet);
+
+        for(var key of keys){
+            for (key2 of keys){
+                if(arr[key2] == arr[key]){
+                    arr[key2] = null;
+                }
+            }
+            
+            console.log(arr);
+        }
+
+    </script>
+    
+
+</body>
+</html>
