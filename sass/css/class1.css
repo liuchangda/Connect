@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -39,6 +40,155 @@ li {
   border-right-style: solid;
   border-right-width: 1px;
   border-left: 3px;
+}
+
+.div11 {
+  width: 20px;
+  height: 50px;
+  color: #000;
+}
+
+.div12 {
+  width: 100px;
+  height: 20px;
+  color: #000;
+}
+
+.div13, .div14 {
+  width: 111px;
+  height: 222px;
+  background: #000;
+}
+
+.div14 {
+  font-size: 1px;
+}
+
+.div15 {
+  width: 0.6666666667px;
+}
+
+.div16 {
+  width: url("../img/xxx.jpg");
+}
+
+.div17 {
+  color: #ff9999;
+  background-color: #006600;
+  border-color: rgba(255, 0, 0, 0.8);
+}
+
+.div18 {
+  color: rgba(0, 255, 0, 0.2);
+}
+
+.div19 {
+  color: #fff;
+}
+
+.box-div2 {
+  color: #000;
+}
+
+/*注释 hello world*/
+.div20 {
+  color: blue;
+}
+
+.div-21 {
+  color: #0f0;
+}
+
+.div-22 {
+  color: #0f0;
+}
+
+.div-23 {
+  color: #0f0;
+}
+
+.div-24 {
+  color: #0f0;
+}
+
+.div-25 {
+  color: #0f0;
+}
+
+.div-26 {
+  color: #0f0;
+}
+
+.div-27 {
+  color: #0f0;
+}
+
+.div-28 {
+  color: #0f0;
+}
+
+.div-29 {
+  color: #0f0;
+}
+
+.div-30 {
+  color: #0f0;
+}
+
+.div-a {
+  width: 100px;
+}
+
+.div-b {
+  width: 100px;
+}
+
+.div-c {
+  width: 100px;
+}
+
+.div-d {
+  width: 100px;
+}
+
+.div-test-10 {
+  color: #ff0000;
+}
+
+.div-test-9 {
+  color: #ff0000;
+}
+
+.div-test-8 {
+  color: #ff0000;
+}
+
+.div-test-7 {
+  color: #ff0000;
+}
+
+.div-test-6 {
+  color: #ff0000;
+}
+
+.div-test-5 {
+  color: #ff0000;
+}
+
+.div-test-4 {
+  color: #ff0000;
+}
+
+.div-test-3 {
+  color: #ff0000;
+}
+
+.div-test-2 {
+  color: #ff0000;
+}
+
+.div-test-1 {
+  color: #ff0000;
 }
 
 /*# sourceMappingURL=class1.css.map */

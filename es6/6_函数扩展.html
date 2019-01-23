@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        // function foo(name,age){
+        //     console.log(name,age);
+        //     // console.log(this); //指向window
+        // }        
+        // foo('zs',20);
+        // console.log(foo.length);
+        // console.log(foo.name); //返回方法名foo
+        
+        // 'use strict';
+        // str = '123';
+        // console.log(str);
+        
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     // this.showInfo = function(){
+        //     //    console.log(this.name,this.age); 
+        //     // }           
+        // }
+        // Person.prototype.showInfo = function(){
+        //     console.log(this); //this指向person 改变了this指向
+        //     console.log(this.name,this.age);            
+        // }
+        // var student = new Person('zs',29);
+        // student.showInfo();
+
+        // var arr = new Array(1,2,4,3,21,34,5);
+        // console.log(arr.push()); //输出元素个数
+
+        // 'use strict';
+        // function foo(){
+        //     console.log(this); //use strict禁止this指向全局变量            
+        // }        
+        // foo();
+
+        // 'use strict';
+        // function foo(a,a,c){
+        //     console.log(a,a,c);
+        // }
+        // foo(1,2,3); //报错 函数不能有重名的参数
+
+        // 'use strict';
+        // function foo(num){
+        //     if(num == 1){
+        //         return 1;
+        //     }else{
+        //         return num*arguments.callee(num-1); //严格状态下 不允许使用arguements.callee
+        //     }
+        // }
+        // console.log(foo(4));
+        
+        function foo(name = 'zs'){
+            'use strict';
+            console.log(name); //严格情况下 函数参数为默认值就会报错            
+        }
+        foo('li');
+        // function foo2() {
+        //     console.log(this);
+        // }
+        // foo2();
+    </script>
+    
+
+</body>
+</html>
