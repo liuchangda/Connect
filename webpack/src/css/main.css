@@ -4,4 +4,11 @@
 }
 #box{
     color: red;
+    width: 100px;
+    height: 100px;
+    transform: rotate(30deg);
+    background-image: url(../img/01.jpg);
+}
+.aaa{
+    width: 1888px;
 }

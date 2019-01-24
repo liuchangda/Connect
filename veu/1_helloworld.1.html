@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}{{msg2}}
+
+        <h1 v-if ="isShow == 1">new1</h1>
+        <h1 v-else if ="isShow == 2">new2</h1>
+        <h1 v-else>其他</h1>
+        <h1 v-show="false">我是存在的</h1>
+
+        <ul>
+            <li v-for="(val,index) in arr">{{val}}-{{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="(val,key) in obj">{{val}}--{{key}}</li>
+        </ul>
+    </div>
+    <script>
+        let vw = new Vue({
+            el:"#app",
+            data:{
+                msg:"hello world",
+                msg2:"lc",
+                isShow:1,
+                arr:[1,2,3,4,5],
+                obj:{
+                    name:"ZS",
+                    age:"12"
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>
