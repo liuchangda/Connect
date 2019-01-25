@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+        .active{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchText"><button @click="search">搜索</button>
+        <div>
+            商品名称：<input type="text" v-model="name"> 商品价格：<input type="text" v-model="price" > <button @click="add">添加</button>
+        </div>
+        <!-- <div class="active" v-for="obj in arr">
+            <input type="checkbox">
+            {{obj.name}}{{obj.price}}
+            <button>删除</button>
+        </div> -->
+        <!-- <div v-for="obj in arr">{{obj.price}}</div> -->
+
+        <!-- <ul>
+            <p>商品名称 商品价格 操作  </p>
+            <li v-for="obj in arr"  @click="obj.isSelected=!obj.isSelected" :class="{active:obj.isSelected}">                
+                <p>
+                    <input type="checkbox">
+                    {{obj.name}}{{obj.price}}
+                    <button>删除</button>
+                </p>
+            </li>
+            <button>删除选中</button><p>价格：<input type="text" ></p>
+        </ul> -->
+
+        <table>
+            <thead>
+                <th>选择</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in productList" :key="index" :class="{active:item.isSelected}" @click="item.isSelected=!item.isSelected">                    
+                    <td><input type="checkbox" v-model="item.isSelected"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>                    
+                    <td><button @click="delSig(item.id)">删除</button></td>  
+                </tr>
+                <tr>
+                    <td><button @click="delCheck">删除选中</button></td>
+                    <td>价格：{{sum}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let vw = new Vue({
+            el:"#app",         
+            data:{
+                nowId:'5',
+                name:"",
+                price:0,
+                isSelected:"false",
+                searchText:'',
+               productList:[
+                   obj1={
+                       id:"1",
+                       name:"衣服",
+                       price:"123",
+                       isSelected:false
+                   },
+                   obj2={
+                       id:"2",
+                       name:"裤子",
+                       price:"234",
+                       isSelected:false
+                   },
+                   obj3={
+                       id:"3",
+                       name:"鞋子",
+                       price:"345",
+                       isSelected:false
+                   },
+                   obj4={
+                       id:"4",
+                       name:"帽子",
+                       price:"456",
+                       isSelected:false
+                   },
+                   obj4={
+                       id:"5",
+                       name:"手套",
+                       price:"567",
+                       isSelected:false
+                   }
+                   ]
+            }, 
+            methods:{
+                delSig(id){
+                    let thisArr = [];
+                    thisArr = this.productList.filter(function(val,index,arr){
+                        if(val.id!=id){
+                            return val;
+                            // console.log(val);
+                            
+                        }
+                    })
+                    this.productList = thisArr;
+                },
+                add(){
+                    let obj = {
+                        id:++this.nowId,
+                        name:this.name,
+                        price:this.price,
+                        isSelected:this.isSelected,                      
+                    }
+                    this.productList.push(obj);
+                    // console.log(id);
+                },
+                search(){
+                    let thisArr = [];
+                    let _this=this;
+                    thisArr = this.productList.filter(function(val,index){
+                        if(val.name.includes(_this.searchText)){
+                            return val;                            
+                        }
+                    })
+                    this.productList = thisArr;                    
+                },
+                delCheck(){
+                    let thisArr = [];
+                    thisArr=this.productList.filter(function(val,index){
+                        if(!val.isSelected){
+                            return val;
+                        }
+                    })
+                    this.productList = thisArr;
+                }
+            },
+            computed:{
+                sum(){
+                    let sumNum = 0;
+                    this.productList.forEach(function(val,index){
+                        if(val.isSelected){
+                            sumNum = sumNum+parseInt(val.price);                            
+                        }
+                    })
+                    return sumNum;
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

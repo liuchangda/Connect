@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="change">改变</button>
+        <p v-for="(item,index) in arr" :key="index">{{item}}</p>
+        <p v-for="(item,index) in obj" :key="index">{{item}}</p>
+    </div>
+    <script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[1,2,3,4,5],
+            obj:{
+                name:"zs",
+                age:23
+            }
+        },
+        methods:{
+            change(){
+                // this.arr[2]='a';
+                // console.log(this.arr);
+                // Vue.set(this.arr,2,'a');
+                // Vue.set(this.arr,this.arr.length,++this.arr.length);
+                this.obj.name='lisi';
+                console.log(this.obj);
+                Vue.set(this.obj,'name','ww')
+                
+                
+            }
+        }
+        
+    })
+    </script>
+</body>
+</html>
