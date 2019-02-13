@@ -75,31 +75,31 @@
                    obj1={
                        id:"1",
                        name:"衣服",
-                       price:"123",
+                       price:123,
                        isSelected:false
                    },
                    obj2={
                        id:"2",
                        name:"裤子",
-                       price:"234",
+                       price:234,
                        isSelected:false
                    },
                    obj3={
                        id:"3",
                        name:"鞋子",
-                       price:"345",
+                       price:345,
                        isSelected:false
                    },
                    obj4={
                        id:"4",
                        name:"帽子",
-                       price:"456",
+                       price:456,
                        isSelected:false
                    },
                    obj4={
                        id:"5",
                        name:"手套",
-                       price:"567",
+                       price:567,
                        isSelected:false
                    }
                    ]
@@ -151,7 +151,7 @@
                     let sumNum = 0;
                     this.productList.forEach(function(val,index){
                         if(val.isSelected){
-                            sumNum = sumNum+parseInt(val.price);                            
+                            sumNum = sumNum+val.price;                            
                         }
                     })
                     return sumNum;
