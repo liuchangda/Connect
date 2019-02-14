@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button @click="add">增加</button>
+    <h1>{{ msg }}</h1>  
   </div>
 </template>
 
@@ -10,11 +9,6 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  },
-  methods:{
-    add(){
-      this.$emit("addChildren",10)
-    }
   }
 }
 </script>
