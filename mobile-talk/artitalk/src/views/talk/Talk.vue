@@ -3,6 +3,12 @@
 </template>
 <script>
 export default {
-    
+      created(){
+        let obj = {
+            title:'聊天',
+            className:'talk'
+        };
+        this.$emit("changNav",obj);
+    }
 }
 </script>
