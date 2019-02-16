@@ -11,4 +11,5 @@ export default {
         this.$emit("changNav",obj);
     }
 }
+
 </script>
