@@ -41,7 +41,7 @@ export default {
                 this.listStart += 10;
                 this.getData();
             }
-            console.log(clientHight,scrollTop,scrollHeight);
+            // console.log(clientHight,scrollTop,scrollHeight);
             
         }
     },
