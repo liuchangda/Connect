@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        class Com2 extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count2:100
+                }
+            }
+            Com2Change(){
+                this.props.changeC();
+                
+            }
+            render(){
+                return(
+                    <button onClick = {this.Com2Change.bind(this)}>调兵</button>
+                )
+            }
+        }
+        class Com3 extends React.Component{
+            constructor(props){
+                super(props);       
+                this.state = {
+                    count3:100
+                }         
+            }
+            Com3Change(){
+                this.props.changeC();
+            }
+            render(){
+                return(
+                    <button onClick = {this.Com3Change.bind(this)}>我也要调兵</button>
+                )                    
+            }
+        }
+        class Add extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count:100
+                
+            }
+            changeP(){
+                this.setState({
+                    count:this.state.count-10
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>全部士兵数量:{this.state.count}</h2>
+                        <h2>将军一号有士兵:{this.state.count2}</h2>
+                        <Com2 changeC={this.changeP.bind(this)}/>
+                        <h2>将军二号有士兵:{this.state.count3}</h2>
+                        <Com3 changeC={this.changeP.bind(this)}/>
+                    </div>                    
+                ) 
+            }
+        }         
+        ReactDOM.render(
+            <Add/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
+
+

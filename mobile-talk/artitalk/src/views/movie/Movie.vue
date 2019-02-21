@@ -1,7 +1,7 @@
 <template>
 <div>
     <ul>
-        <li v-for="(item,index) in dataList" :key="index" class="item-list clearfix">
+        <li @click="goDetail(item.id)" v-for="(item,index) in dataList" :key="index" class="item-list clearfix">
             <div class="item-left">
                 <img :src="item.cover.url" alt="">
             </div>
@@ -19,6 +19,7 @@
        </div>       
     </div>
 </div>
+
 </template>
 <script>
 export default {
@@ -52,14 +53,19 @@ export default {
             let url = `https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=${this.listStart}&count=10`;
             axios.get(proxy+url)
             .then((res) =>{
-                console.log(res.data.subject_collection_items);
-                console.log(this.listStart);
+                // console.log(res.data.subject_collection_items);
+                // console.log(this.listStart);
+                // console.log(res);
+                
                 this.dataList = this.dataList.concat(res.data.subject_collection_items);
                 this.isLoading = true;
             })
             .catch((res) => {
                 console.log('失败');
             })
+        },
+        goDetail(id){           
+            this.$router.push({name:'moviedetail',params:{movieId:id}})
         }
     }
 }

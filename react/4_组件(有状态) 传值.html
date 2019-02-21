@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        class Com2 extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            Com2Change(){
+                this.props.changeC();
+                
+            }
+            render(){
+                return(
+                    <button onClick = {this.Com2Change.bind(this)}>Com2Change</button>
+                )
+            }
+        }
+        class Add extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count:0
+                }
+            }
+            add(num){
+                this.setState({
+                    count:this.state.count+num
+                })
+            }
+            changeP(){
+                this.setState({
+                    count:100
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>world {this.props.name} {this.props.children}</h2>
+                        <h1>{this.state.count}</h1>
+                        <button onClick={this.add.bind(this,10)}>add</button>
+                        <Com2 changeC={this.changeP.bind(this)}/>
+                    </div>                    
+                ) 
+            }
+        }         
+        ReactDOM.render(
+            <Add name="gagagga">xixixi</Add>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
+
+

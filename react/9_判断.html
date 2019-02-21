@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+    <style>
+        .active{
+            color: green;   
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        function Test1(){
+            let isShow = true;
+            let str = null;
+            if(isShow){
+                str = <Test2/>;
+            }
+            return(
+                <div>
+                    {str}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                </div>
+            )
+        }
+        class Test2 extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    cName:"active"
+                }
+            }
+            render(){
+                let textColor2 = {
+                    color:'red'
+                } 
+                return(
+                    <div>
+                        <h2 className = {this.state.cName}>world</h2>
+                        <h3 style={textColor2}>xixi</h3>
+                    </div>
+                    
+                )
+            }
+        }
+        class FooP extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state={
+          isShow:"Test2"
+        }
+      }
+      render(){
+        return (
+          <div>
+            {this.state.isShow == "Test1" ? <Test1/> : <Test2/>}
+          </div>
+        )
+        
+        
+      }
+    }
+        ReactDOM.render(
+            <div><Test1/></div>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
+
+

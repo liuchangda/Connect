@@ -14,8 +14,7 @@
 </template>
 
 <script>
-export default {
- 
+export default { 
   data(){     
     return{
       activeTitle:"电影",
@@ -24,7 +23,7 @@ export default {
       {
         name:"电影",
         routerPath:"/",
-        className:'movie'
+        className:'movie',
       },
       {
         name:"音乐",

@@ -88,7 +88,7 @@ export default {
                 }
             }
             //3将应用密钥以app_key为键名，组成URL键值拼接到字符串末尾
-            str += 'app_key'+appkey;
+            str += 'app_key='+appkey;
 
             // 4对字符串S进行MD5运算，将得到的MD5值所有字符转换成大写
             str = md5(str).toUpperCase();
@@ -117,10 +117,11 @@ export default {
                     question:this.msg,
                     answer:res.data.data.answer,
                 }
-                console.log(this.question);
+                this.talkList.push(obj);
+                console.log(this.msg);
                 console.log(res);
                 
-                this.talkList.push(obj);
+                
                 
             })
         }
