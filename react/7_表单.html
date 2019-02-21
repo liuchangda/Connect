@@ -43,8 +43,8 @@
                     <div>
                     <form onSubmit={this.onSubmit.bind(this)}>
                         <input ref="input1" type="text"/>
-                        <input type="text" onChange={this.change.bind(this)}/>
                         <input ref={(input) => this.input2 = input} type="text" name="inp"/>
+                        <input type="text" onChange={this.change.bind(this)}/>
                         <select onChange={this.change.bind(this)}>
                             <option value="grapefruit">Grapefruit</option>
                             <option value="lime">Lime</option>

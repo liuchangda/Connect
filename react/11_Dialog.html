@@ -57,9 +57,10 @@
                }
            }
            
-           changeShow(state){
+           changeShow(state,name){
                 this.setState({
                     isShow:state,
+                    name:name
                 })
            }
            render(){
@@ -67,7 +68,7 @@
                    <div>
                         <DiaBtn showDia={this.changeShow.bind(this)} name="登录"/>
                         <DiaBtn showDia={this.changeShow.bind(this)} name="注册"/>
-                        <DiaContent isShow={this.state.isShow}/>
+                        <DiaContent title={this.state.name} hideDia={this.changeShow.bind(this)} isShow={this.state.isShow}/>
                    </div>
                )
            }
@@ -80,7 +81,7 @@
                }
            }
            show(){
-               this.props.showDia(true);
+               this.props.showDia(true,this.props.name);
            }
            render(){
                return(
@@ -95,6 +96,9 @@
 
                }
            }
+           hide(){
+                   this.props.hideDia(false)
+               }
            render(){
                let style={
                    display:(this.props.isShow?'block':'none')
@@ -103,14 +107,26 @@
                    <div class="dia-bg" style={style}>
                         <div class="dia-box">
                             <div class="dia-header">
-                                <div>title</div>
-                                <div>X</div>
+                                <div>{this.props.title}</div>
+                                <div onClick={this.hide.bind(this)}>X</div>
                             </div>
-                            <div class="dia-body"></div>
+                            <div class="dia-body">
+                                {this.props.title=="登录"?<Signin/>:<Signup/>}
+                            </div>
                         </div>
                    </div>
                )
            }
+       }
+       function Signin() {
+           return(
+               <h1>这是登录</h1>
+           )
+       }
+       function Signup(){
+           return(
+               <h1>这是注册</h1>
+           )
        }
         ReactDOM.render(
             <Dialog/>,
